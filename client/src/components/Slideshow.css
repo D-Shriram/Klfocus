@@ -1,0 +1,186 @@
+/* General slideshow container styling */
+.slideshowWrapper {
+  position: relative;
+  width: 100%; /* Full width */
+  height: 100vh; /* Full viewport height */
+  margin: 0; /* No margin */
+  background-image: linear-gradient(rgba(5, 10, 35, 0.75), rgba(5, 10, 35, 0.75)), url(../images/KL-University-scaled.jpg);
+  background-size: cover; /* Ensure the background covers the full screen */
+  background-position: center; /* Center the background image */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional soft shadow for depth */
+  opacity: 1;
+  transition: opacity 3s ease-in-out;
+  animation: fadeInBackground 2s ease-out;
+}
+
+/* Animation for background fading */
+@keyframes fadeInBackground {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Welcome text section */
+.welcomeText {
+  position: absolute;
+  top: 20%;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 2s ease-out, transform 2s ease-out;
+}
+
+.welcomeText.showText {
+  opacity: 1;
+}
+
+/* Animation for moving text */
+.welcomeText.moveUpText {
+  transform: translateY(-50px); /* Move the text up */
+}
+
+.welcomeText h1,
+.welcomeText h2,
+.welcomeText h3 {
+  margin: 0;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.welcomeText h1 {
+  font-size: 3em;
+}
+
+.welcomeText h2 {
+  font-size: 2.5em;
+}
+
+.welcomeText h3 {
+  font-size: 2em;
+}
+
+/* Slideshow Content */
+.slideshowContent {
+  position: relative;
+  width: 100%;
+  transform: scale(0); /* Initially hidden and scaled down */
+  transition: transform 1s ease-out, opacity 1s ease-out;
+  opacity: 0;
+  transform-origin: center center;
+}
+
+/* Apply animation to bring slides into view */
+.slideshowContent.startAnimation {
+  transform: scale(1); /* Scale to original size */
+  opacity: 1; /* Fade in */
+}
+
+/* Improve the appearance of the images */
+.slideImage {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  transition: transform 0.5s ease-in-out; /* Smooth transition for image change */
+}
+
+/* Caption styling */
+.captionText {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  font-size: 22px;
+  font-weight: bold; /* Bold caption for emphasis */
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px; /* Add more padding for readability */
+  border-radius: 5px; /* Round corners of the caption box */
+}
+
+/* General button styling */
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 18px;
+  font-size: 22px; /* Slightly larger button text */
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 1;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.navButton:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Position previous and next buttons */
+.prevButton {
+  left: 20px;
+}
+
+.nextButton {
+  right: 20px;
+}
+
+/* Dot container for navigation */
+.dotsWrapper {
+  text-align: center;
+  padding: 20px; /* Increase padding for more space between dots */
+}
+
+/* Dot styling for navigation */
+.dotItem {
+  height: 12px;
+  width: 12px;
+  margin: 0 10px; /* Add more spacing between dots */
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.dotItem.activeDot {
+  background-color: #717171;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .slideshowWrapper {
+      width: 100%; /* Full width on smaller screens */
+      margin: 0; /* Remove margin */
+  }
+
+  .slideImage {
+      height: 300px; /* Make the images shorter on mobile */
+  }
+
+  .captionText {
+      font-size: 18px; /* Smaller font size on mobile */
+  }
+
+  .navButton {
+      padding: 14px; /* Smaller button size on mobile */
+      font-size: 18px;
+  }
+
+  .dotsWrapper {
+      padding: 10px;
+  }
+
+  .dotItem {
+      height: 10px;
+      width: 10px;
+  }
+}

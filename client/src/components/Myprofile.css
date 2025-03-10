@@ -1,0 +1,90 @@
+/* General Styles
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #100f0f;
+    margin: 0;
+    padding: 0;
+}
+
+
+.profile-container {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+h1, h2, h3, h4 {
+    font-family: 'Pacifico', cursive;
+    color: #333;
+    text-align: center;
+}
+
+
+.section-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #ff0000;
+    text-decoration: underline;
+}
+
+
+.personal-info h2, .personal-info h3 {
+    font-size: 1.2em;
+    color: #4a90e2;
+}
+
+.personal-info span {
+    color: #ff0000;
+}
+
+
+.contact-info h4 {
+    font-size: 1.2em;
+    color: #4a90e2;
+}
+
+
+.grievance-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.grievance-table th, .grievance-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+    font-size: 1em;
+}
+
+.grievance-table th {
+    background: linear-gradient(135deg, #f78ca0 0%, #ff0000 100%);
+    color: white;
+}
+
+.grievance-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+
+.loading-text, .error-text {
+    text-align: center;
+    font-size: 1.5em;
+    color: #555;
+}
+
+
+.text-center {
+    text-align: center;
+}
+
+
+hr {
+    border: 2px solid #ff85ff;
+    border-radius: 5px;
+    margin: 20px 0;
+} */
