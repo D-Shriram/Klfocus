@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 const UpdateDocs = () => {
+    const history = useHistory();
     const [gId, setGId] = useState('');
     const [_id, setMId] = useState('');
     const [email, setEmail] = useState('');
@@ -61,6 +63,7 @@ const UpdateDocs = () => {
                 window.alert("Could not connect to backend");
             } else {
                 window.alert("Grievance Updated Successfully");
+                history.goBack();
             }
         } catch (err) {
             console.log(err);

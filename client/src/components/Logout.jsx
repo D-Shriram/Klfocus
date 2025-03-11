@@ -15,7 +15,7 @@ const Logout=()=>{
             credentials:"include"
         }).then((res)=>{
             dispatch({type:"USER",payload:false})
-            history.push("/login", {replace: true});
+            history.push("/", {replace: true});
             if(!res.status===200){
                 const error=new Error(res.err);
                 throw error;

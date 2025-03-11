@@ -1,3 +1,5 @@
+process.noDeprecation = true;  // Suppress deprecation warnings
+
 const express=require('express');
 require('./db/conn');
 const dotenv=require("dotenv");
