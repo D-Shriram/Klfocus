@@ -1,21 +1,34 @@
-# Grievance-Portal
-A protal where users can file complaints and get real time updates via registered email.
+Focus Student Body Grievance Collection Website
 
-Major features:
-1. Sendgrid 
-2. JWT Authentication 
-3. Password hashing 
+Overview
 
-This project is best to show in your college as project.
+This project is a website developed for the Focus Student Body under the Resolvance Wing at KL University. The purpose of this website is to serve as a platform for university students to submit and track their grievances. The website allows students to report various issues they face on campus, ensuring that the student body has an efficient and transparent way of addressing concerns.
 
-# Frontend
-- Setup react on your system
-- Run `npm install`
-- Run `npm start`
+Features-
+Student Grievance Submission: A simple and user-friendly form to submit grievances related to academics, campus facilities, hostel issues, etc.
+Grievance Management: Allows for grievance tracking and management.
+Real-time Updates: Students can view the status of their submitted grievances.
+Admin Dashboard: Provides admins with the tools to manage and resolve student grievances effectively.
+Purpose
 
-# Backend
-- Setup Node on your system
-- Run `npm install`
-- Run `npm start`
+This website was developed to:
 
-<strong>You can replace database url with your local mongoDB URL to run in your system.</strong>
+Provide a dedicated channel for students to raise concerns or complaints.
+Ensure that grievances are handled in a systematic and organized manner.
+Improve communication between the student body and the university administration.
+Tech Stack
+Frontend:
+
+HTML
+CSS
+JavaScript (React.js)
+Backend:
+
+Node.js
+Express.js
+Database:
+
+MongoDB
+Authentication:
+
+JWT (JSON Web Tokens)
