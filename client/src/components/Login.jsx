@@ -19,25 +19,44 @@ const Login = () => {
   const loginUser = async (e) => {
     e.preventDefault();
 
-    const res = await fetch(`${process.env.REACT_APP_API_URL}/signin`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        'Accept': 'application/json'
-      },
-      credentials: 'include',
-      body: JSON.stringify({
-        email, password
-      })
-    });
-    const data = await res.json();
+    try {
+      console.log('Attempting to login with API URL:', process.env.REACT_APP_API_URL);
+      
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/signin`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        credentials: 'include',
+        body: JSON.stringify({
+          email,
+          password
+        })
+      });
 
-    if (res.status === 400 || !data) {
-      window.alert("Invalid Credentials");
-    } else {
-      dispatch({ type: "USER", payload: true })
+      let data;
+      try {
+        data = await res.json();
+      } catch (err) {
+        console.error('Error parsing response:', err);
+        throw new Error('Server response was not in JSON format');
+      }
+
+      if (!res.ok) {
+        throw new Error(data.error || `Login failed with status ${res.status}`);
+      }
+
+      dispatch({ type: "USER", payload: true });
       window.alert("Login Successful");
       history.push("/");
+    } catch (error) {
+      console.error("Login error:", error);
+      if (error.message.includes('Server response was not in JSON format')) {
+        window.alert("Server error. Please try again later.");
+      } else {
+        window.alert(error.message || "Invalid Credentials");
+      }
     }
   }
 

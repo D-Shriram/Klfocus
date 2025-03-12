@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const dbURI = "mongodb+srv://shriramuchiha66:2200032943@cluster0.gdr96.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const dbURI = process.env.MONGODB_URI;
 
 mongoose.connect(dbURI, {
     useNewUrlParser: true,
@@ -10,8 +10,6 @@ mongoose.connect(dbURI, {
 }).catch((err) => {
     console.log("No Connection to Database", err);
 });
-
-
 
 // const mongoose=require('mongoose');
 
