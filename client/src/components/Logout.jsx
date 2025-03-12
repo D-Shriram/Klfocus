@@ -6,7 +6,7 @@ const Logout=()=>{
     const {state,dispatch} = useContext(UserContext);
     const history=useHistory();
     useEffect(()=>{
-        fetch("/logout",{
+        fetch(`${process.env.REACT_APP_API_URL}/logout`,{
             method:"GET",
             headers:{
                 Accept:"application/json",

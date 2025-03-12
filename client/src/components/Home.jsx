@@ -9,7 +9,8 @@ const Home = () => {
 
     const userHome = async () => {
         try {
-            const res = await fetch("/getdata", {
+            // const res = await fetch("/getdata", {
+            const res = await fetch(`${process.env.REACT_APP_API_URL}/getdata`, {
                 method: "GET",
                 headers: {
                     Accept: "application/json",
