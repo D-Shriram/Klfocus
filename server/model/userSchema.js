@@ -52,42 +52,46 @@ const userSchema=new mongoose.Schema({
         type: String,
         required: true
     },
-    grievances:[
-    {   
-        name:{
-            type:String,
-            required:true
+    grievances: [
+        {
+          name: {
+            type: String,
+            required: true,
+          },
+          email: {
+            type: String,
+            required: true,
+          },
+          phone: {
+            type: String,
+            required: true,
+          },
+          dept: {
+            type: String,
+            required: true,
+          },
+          grievance: {
+            type: String,
+            required: true,
+          },
+          fileUrl: { // New field to store the file URL
+            type: String,
+          },
+          status: {
+            type: String,
+            default: 'Not seen',
+          },
+          feedback: {
+            type: String,
+            default: 'NA',
+          },
+          date: {
+            type: Date,
+            default: Date.now,
+          },
         },
-        email:{
-            type:String,
-            required:true
-        },
-        phone:{
-            type:String,
-            required:true
-        },
-        dept:{
-            type:String,
-            required:true
-        },
-        grievance:{
-        type:String,
-        required:true
-        },
-        status:{
-            type:String,
-            default:"Not seen"
-        },
-        feedback:{
-            type:String,
-            default:"NA"
-        },
-        date:{
-            type:Date,
-            default:Date.now
-        }
-    }
-    ],
+      ],
+      
     
     tokens:[
         {

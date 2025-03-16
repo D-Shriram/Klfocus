@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';  // Import Link for navigation
 import './Slideshow.css';  // Importing the updated CSS file
 
 // Import images from the 'assets' folder
@@ -100,7 +101,16 @@ const Slideshow = () => {
           ></span>
         ))}
       </div>
-      
+
+      {/* Get Started & About Us Buttons */}
+      <div className="d-flex flex-column flex-sm-row align-items-center mt-3">
+        <Link to='/login'>
+          <button type='button' className='btn btn-danger btn-lg mx-0 mx-sm-2 my-2 my-sm-0'>Get Started</button>
+        </Link>
+        <Link to="/aboutus">
+          <button type='button' className='btn btn-outline-light btn-lg mx-0 mx-sm-2 my-2 my-sm-0'>About Us</button>
+        </Link>
+      </div>
     </div>
   );
 };

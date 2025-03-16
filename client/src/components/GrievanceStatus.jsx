@@ -60,6 +60,7 @@ const GrievanceStatus=()=>{
             <>
             <table className="Gtable table-dark">
             <tr>
+                <th>Copy ID</th>
                 <th>ID</th>
                 <th>Names</th>
                 <th>Email</th>
@@ -73,6 +74,14 @@ const GrievanceStatus=()=>{
             {
               Array.map((cval)=>{
                   return <tr>
+                  <td>
+                    <button 
+                      className="btn btn-sm btn-outline-light"
+                      onClick={() => navigator.clipboard.writeText(cval._id)}
+                    >
+                      Copy
+                    </button>
+                  </td>
                   <td>{cval._id}</td>
                   <td>{cval.name}</td>
                   <td>{cval.email}</td>

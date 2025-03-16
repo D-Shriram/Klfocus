@@ -48,7 +48,7 @@ export const UserContext = createContext();
   const Routing = ()=>{
     return(
     <Switch>
-      <Route exact path="/" component={Home}/>
+      <Route exact path="/home" component={Home}/>
       <Route exact path="/grievance" component={Grievance}/>
       <Route exact path="/login" component={Login}/>
       <Route exact path="/signup" component={Signup}/>
@@ -73,7 +73,7 @@ export const UserContext = createContext();
       <Route exact path="/wel" component={Wel}/>
       <Route exact path="/aAbBcC" component={GrievanceStatus}/>
       <Route exact path="/aAbBcC/updatedocs" component={UpdateDocs}/>
-      <Route exact path="/slideshow" component={Slideshow}/>
+      <Route exact path="/" component={Slideshow}/>
       <Route component={Error} />
       </Switch>
     );

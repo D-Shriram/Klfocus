@@ -18,27 +18,31 @@ const Login = () => {
 
   const loginUser = async (e) => {
     e.preventDefault();
-
+  
     const res = await fetch('/signin', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         'Accept': 'application/json'
       },
+      credentials: 'include',
       body: JSON.stringify({
         email, password
       })
     });
+  
     const data = await res.json();
-
+  
     if (res.status === 400 || !data) {
       window.alert("Invalid Credentials");
     } else {
-      dispatch({ type: "USER", payload: true })
+      localStorage.setItem("user", JSON.stringify(data));  // Store user info in localStorage
+      dispatch({ type: "USER", payload: true });  // Update context state
       window.alert("Login Successful");
-      history.push("/");
+      history.push("/home");
     }
-  }
+  };
+  
 
   return (
     <>
