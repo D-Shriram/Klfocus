@@ -80,14 +80,6 @@ const GrievanceStatus=()=>{
               Array.map((cval)=>{
                   return <tr>
                   <td>
-<<<<<<< HEAD
-                    <button 
-                      className="btn btn-sm btn-outline-light"
-                      onClick={() => navigator.clipboard.writeText(cval._id)}
-                    >
-                      Copy
-                    </button>
-=======
                       <button 
                           className="btn btn-sm btn-outline-light" 
                           onClick={() => copyToClipboard(cval._id)}
@@ -95,7 +87,6 @@ const GrievanceStatus=()=>{
                       >
                           📋
                       </button>
->>>>>>> 7d7aefbbb398a40eb1e067303007be1d7c8015d9
                   </td>
                   <td>{cval._id}</td>
                   <td>{cval.name}</td>
