@@ -1,5 +1,7 @@
+import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import './Slideshow.css';  // Importing the updated CSS file
+
 
 // Import images from the 'assets' folder
 import img1 from '../images/x.jpg';
@@ -22,12 +24,12 @@ const Slideshow = () => {
     {
       id: 2,
       image: img2,
-      caption: 'Random',
+      caption: 'Club Meeting',
     },
     {
       id: 3,
       image: img3,
-      caption: 'Inspire Yourself',
+      caption: 'SIL Event',
     },
   ];
 
@@ -100,8 +102,19 @@ const Slideshow = () => {
           ></span>
         ))}
       </div>
+      <div className='d-flex flex-column flex-sm-row align-items-center'>
+                <Link to='/login'>
+                <button type='button' className='btn btn-danger btn-lg mx-0 mx-sm-2 my-2 my-sm-0'>Get Started</button>
+                </Link>
+                <Link to="/aboutus">
+                <button type='button' className='btn btn-outline-light btn-lg mx-0 mx-sm-2 my-2 my-sm-0'>About Us</button>
+                </Link>
+            </div>
+      
       
     </div>
+    
+    
   );
 };
 

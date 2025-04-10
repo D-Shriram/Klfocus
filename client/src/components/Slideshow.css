@@ -44,7 +44,7 @@
 
 /* Animation for moving text */
 .welcomeText.moveUpText {
-  transform: translateY(-50px); /* Move the text up */
+  transform: translateY(-100px); /* Move the text up */
 }
 
 .welcomeText h1,

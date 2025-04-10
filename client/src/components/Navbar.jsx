@@ -9,7 +9,7 @@ const Navbar = () => {
   useEffect(() => {
     const loggedIn = localStorage.getItem("user");
     if (loggedIn) {
-      dispatch({ type: "USER", payload: true });
+      dispatch({ type: "USER", payload: false });
     } else {
       dispatch({ type: "USER", payload: true });
     }
