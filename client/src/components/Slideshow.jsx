@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';  // Import Link for navigation
 import './Slideshow.css';  // Importing the updated CSS file
-import { Link } from 'react-router-dom';
 
 
 
