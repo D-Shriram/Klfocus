@@ -11,7 +11,7 @@ const Navbar = () => {
     if (loggedIn) {
       dispatch({ type: "USER", payload: false });
     } else {
-      dispatch({ type: "USER", payload: true });
+      dispatch({ type: "USER", payload: false });
     }
   }, [dispatch]);
 

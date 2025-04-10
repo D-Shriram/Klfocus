@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';  // Import Link for navigation
 import './Slideshow.css';  // Importing the updated CSS file
+import { Link } from 'react-router-dom';
+
 
 
 // Import images from the 'assets' folder
@@ -24,12 +27,20 @@ const Slideshow = () => {
     {
       id: 2,
       image: img2,
+<<<<<<< HEAD
       caption: 'Club Meeting',
+=======
+      caption: 'Club meeting',
+>>>>>>> c505d60cc7272f53c68c681e92331ff68f7b7439
     },
     {
       id: 3,
       image: img3,
+<<<<<<< HEAD
       caption: 'SIL Event',
+=======
+      caption: 'Tech Session',
+>>>>>>> c505d60cc7272f53c68c681e92331ff68f7b7439
     },
   ];
 
@@ -102,6 +113,7 @@ const Slideshow = () => {
           ></span>
         ))}
       </div>
+<<<<<<< HEAD
       <div className='d-flex flex-column flex-sm-row align-items-center'>
                 <Link to='/login'>
                 <button type='button' className='btn btn-danger btn-lg mx-0 mx-sm-2 my-2 my-sm-0'>Get Started</button>
@@ -110,8 +122,27 @@ const Slideshow = () => {
                 <button type='button' className='btn btn-outline-light btn-lg mx-0 mx-sm-2 my-2 my-sm-0'>About Us</button>
                 </Link>
             </div>
+=======
+
+<<<<<<< HEAD
+      {/* Get Started & About Us Buttons */}
+      <div className="d-flex flex-column flex-sm-row align-items-center mt-3">
+=======
+      <div className="d-flex flex-column flex-sm-row align-items-center">
+>>>>>>> 7d7aefbbb398a40eb1e067303007be1d7c8015d9
+        <Link to='/login'>
+          <button type='button' className='btn btn-danger btn-lg mx-0 mx-sm-2 my-2 my-sm-0'>Get Started</button>
+        </Link>
+        <Link to="/aboutus">
+          <button type='button' className='btn btn-outline-light btn-lg mx-0 mx-sm-2 my-2 my-sm-0'>About Us</button>
+        </Link>
+      </div>
+<<<<<<< HEAD
+=======
+>>>>>>> c505d60cc7272f53c68c681e92331ff68f7b7439
       
       
+>>>>>>> 7d7aefbbb398a40eb1e067303007be1d7c8015d9
     </div>
     
     

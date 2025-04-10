@@ -28,41 +28,44 @@ router.post("/register",async(req,res)=>{
         const userExist = await User.findOne({email:email});
         if(userExist){
             return res.status(400).json({error: "Email already exists"});
-         }else if(password!=cpassword){
-            return res.status(400).json({ error:"Passwords do not match"})
-          }
-          else{
-            const user = new User({name,email,password,cpassword,phone,address,year,program});
-             
-            const userRegister=await user.save();
-          if(userRegister){
-            res.status(200).json({ message: "Registration Successful" });
-            const message={
-              to:`${email}`,
-              from: 'shriramuchiha66@gmail.com',
-              name:"FOCUS Grievace ",
-              subject:'Successfully Registered!!',
-              text:`Congratulations ${name}, You have been successfully registered`
-              //html:'<h1>We will inform you when</h1>'
-            };
-
-            //sending mail
-            sgMail.send(message)
-            .then(response => {console.log("Message sent")})
-            .catch(err => {console.log(err)});
-            
-            res.status(200).json({message:"Registration Successful"})
-          }else{
-            // return res.status(400).json({error: "Failed to register"})
-            res.status(400).json({ error: "Failed to register" })
+        } else if(password!=cpassword){
+            return res.status(400).json({error:"Passwords do not match"});
         }
-          }
-     } catch(err){
-        console.log(err);
-     }
+
+        const user = new User({name,email,password,cpassword,phone,address,year,program});
+        const userRegister = await user.save();
+        
+        if(userRegister){
+            try {
+                // Configure SendGrid
+                if (process.env.SENDGRID_API_KEY) {
+                    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+                    const message = {
+                        to: email,
+                        from: 'shriramuchiha66@gmail.com',
+                        subject: 'Successfully Registered!!',
+                        text: `Congratulations ${name}, You have been successfully registered`
+                    };
+                    await sgMail.send(message);
+                    console.log("Welcome email sent");
+                }
+            } catch (emailErr) {
+                console.log("Email sending failed:", emailErr);
+                // Continue with registration even if email fails
+            }
+            
+            return res.status(201).json({message: "Registration Successful"});
+        }
+        
+        return res.status(400).json({error: "Failed to register"});
+    } catch(err){
+        console.log("Registration error:", err);
+        return res.status(500).json({error: "Internal server error"});
+    }
 });
 
 router.post("/signin",async(req,res)=>{
+
   try{
     const {email,password}=req.body;
        //console.log(`Data posted: ${email} and ${password}`);

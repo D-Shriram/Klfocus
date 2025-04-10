@@ -5,9 +5,10 @@ const GrievanceStatus=()=>{
     var arr=[{date:"",dept:"",email:"",feedback:"",grievance:"",name:"",phone:"",status:"",_id:""}];
     const [Array,setArray] =useState([{date:"",dept:"",email:"",feedback:"",grievance:"",name:"",phone:"",status:"",_id:""}]);
 
-    /*const handleInputs=(event)=>{
-      setCat(event.target.value);
-    }*/
+    const copyToClipboard = (text) => {
+        navigator.clipboard.writeText(text);
+        alert('ID copied to clipboard!');
+    };
 
     const getData=async()=>{
         try{
@@ -59,6 +60,7 @@ const GrievanceStatus=()=>{
             <>
             <table className="Gtable table-dark">
             <tr>
+                <th>Copy ID</th>
                 <th>ID</th>
                 <th>Names</th>
                 <th>Email</th>
@@ -72,6 +74,15 @@ const GrievanceStatus=()=>{
             {
               Array.map((cval)=>{
                   return <tr>
+                  <td>
+                      <button 
+                          className="btn btn-sm btn-outline-light" 
+                          onClick={() => copyToClipboard(cval._id)}
+                          title="Click to copy ID"
+                      >
+                          📋
+                      </button>
+                  </td>
                   <td>{cval._id}</td>
                   <td>{cval.name}</td>
                   <td>{cval.email}</td>
@@ -89,7 +100,7 @@ const GrievanceStatus=()=>{
             <Link to="/login" className="btn btn-outline-warning mx-4 mb-1 update">Logout as Admin</Link>
             <br />
             <br />
-            <p className='small mx-4' style={{"font-style":"italic"}}>Note: Copy the grievance ID to update.</p>
+            <p className='small mx-4' style={{"font-style":"italic"}}>Note: Click the clipboard icon to copy the grievance ID.</p>
             </>
         );
     }

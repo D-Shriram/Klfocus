@@ -15,9 +15,9 @@ const AboutUs = () => {
         if (loggedIn) {
             dispatch({ type: "USER", payload: true });
         } else {
-            dispatch({ type: "USER", payload: true });
+            dispatch({ type: "USER", payload: false });
         }
-    }, [dispatch]); // Adding dispatch as dependency to trigger it properly
+    }, [dispatch]); // Adding dispatch as a dependency to trigger it properly
 
     return (
         <div className="about-us">
