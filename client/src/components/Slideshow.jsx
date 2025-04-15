@@ -116,14 +116,7 @@ const Slideshow = () => {
 
       {/* Get Started & About Us Buttons */}
       {/* <div className="d-flex flex-column flex-sm-row align-items-center mt-3"> */}
-      <div className="d-flex flex-column flex-sm-row align-items-center">
-        <Link to='/login'>
-          <button type='button' className='btn btn-danger btn-lg mx-0 mx-sm-2 my-2 my-sm-0'>Get Started</button>
-        </Link>
-        <Link to="/aboutus">
-          <button type='button' className='btn btn-outline-light btn-lg mx-0 mx-sm-2 my-2 my-sm-0'>About Us</button>
-        </Link>
-      </div>
+      
     </div>
     
     
